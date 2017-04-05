@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Travis | A Web-based Note-maker</title>
+	
+	<!-- font imports -->
+	<link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet">
+	
+	<link rel="stylesheet" href="{% static 'notes/css/style.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css" integrity="sha256-fDZ6wHbmob72H9d6oq3P6/F3Hc+wHBjdi6FTsUvvQjs=" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/quill/1.2.3/quill.snow.css" integrity="sha256-EQa7kTy5k5Uenc6l0el6y4gEHWNILk9A4T8jPCFGEJE=" crossorigin="anonymous" />
+</head>
+<body>
+	
+	<div class="container-fluid">
+		
+		{% include 'notes/navbar.html' %}
+
+		{% block content %}
+		{% endblock %}
+	</div>
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/quill/1.2.3/quill.js" integrity="sha256-xByhgqg4UDz1dj5ytp1sAjtm8gylWGu2y3qeRD/rRfc=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+	<script src="{% static 'notes/js/app.js' %}"></script>
+</body>
+</html>

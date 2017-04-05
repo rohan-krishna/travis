@@ -1,0 +1,20 @@
+body {
+	padding-top: 75px;
+}
+
+/* Set dropdown font-families */
+#toolbarContainer .ql-font span[data-label="lato"]::before {
+  font-family: "Lato", sans-serif;
+}
+
+#toolbarContainer .ql-font span[data-label="robotoslab"]::before {
+  font-family: "Roboto Slab", serif;
+}
+
+/* Set content font-families */
+.ql-font-lato {
+  font-family: "Lato";
+}
+.ql-font-robotoslab {
+  font-family: "Roboto Slab", serif;
+}

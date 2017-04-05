@@ -1,0 +1,74 @@
+{% extends 'notes/master.html' %}
+
+{% block content %}
+
+<!-- <h3>Travis says Hello! Welcome to my world!</h3> -->
+<!-- <ul>
+	{% for notebook in notebooks %}
+	<li>
+		{{ notebook.title }} <br>
+		0-0-0-0-0-0-0-0-0-0-0 <br>
+		{% for note in notebook.note_set.all %}
+		{{ note.title }}
+		{% endfor %}
+	</li>
+	{% endfor %}
+</ul> -->
+<div class="row">
+	<div class="col">
+		<form action="{% url 'notes:create' %}" method="post" id="createNotesForm">
+			<h3>Compose an Epic Today</h3>
+			<hr>
+			{% csrf_token %}
+			<div class="form-group">
+				<input type="text" class="form-control" name="title" placeholder="All Stories Begins with a Title">
+			</div>
+			<div class="form-group">
+				<input type="hidden" id="noteContentBody" name="body">
+			</div>
+			<div class="form-group">
+				
+				<div id="toolbarContainer">
+
+					<div class="ql-formats">
+						<select class="ql-size">
+						   <!-- Note a missing, thus falsy value, is used to reset to default -->
+						   <option selected></option>
+						   <option value="large"></option>
+						   <option value="huge"></option>
+						</select>
+
+						<select class="ql-font">
+						    <option value="lato" selected="selected">Lato</option>
+						    <option value="robotoslab">Roboto Slab</option>
+						</select>
+					</div>
+
+					<div class="ql-formats">
+						<!-- Add a bold button -->
+						<button class="ql-bold"></button>
+						<button class="ql-italic"></button>
+						<button class="ql-strike"></button>
+					</div>
+
+					<div class="ql-formats">
+						<button class="ql-script" value="sub"></button>
+						<button class="ql-script" value="super"></button>
+					</div>
+					
+					<div class="ql-formats">
+					 <button class="ql-image" value="image"></button>
+					 <button class="ql-link" value="link"></button>
+					</div>
+				</div>
+				
+				<div id="notesEditor"></div>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Create Note</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+{% endblock %}
